@@ -1,4 +1,4 @@
-# Game-Of-Life
+# Game Of Life
 
 This game is a simple command-line python implementation of Conway's Game of Life using the Pygame library. 
 It was created using MacOS Catalina Version 10.15.1 and Visual Studio Code. 
