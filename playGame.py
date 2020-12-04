@@ -11,8 +11,17 @@ def printMenu() :
 
     if userInput == "1" : 
 
-        nbRows = input("Choose a number of rows for the grid : \n \n")
-        nbColumns = input("Choose a number of columns for the grid : \n \n")
+        def chooseRows() : 
+            nbRows = input("Choose a number of rows between 10 and 100 for the grid : \n \n")
+            if nbRows > 100 or nbRows < 10 or not isinstance(nbRows, int): 
+                print("Please enter a valid value for the number of rows. \n")
+                chooseRows()
+    
+        def chooseColumns() : 
+            nbColumns = input("Choose a number of columns between 10 and 100 for the grid : \n \n")
+            if nbColumns > 100 or nbColumns < 10 or not isinstance(nbColumns, int): 
+                print("Please enter a valid value for the number of columns. \n")
+                chooseColumns()
 
         nbMaxIter = input("Choose a maximal number of iterations : \n \n")
 
@@ -37,8 +46,6 @@ def printMenu() :
 def main() : 
 
     printMenu()
-
-    
 
 
 if __name__ == "__main__" : 

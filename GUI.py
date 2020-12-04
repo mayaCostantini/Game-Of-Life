@@ -15,7 +15,7 @@ def createGame(gridSize, maxIter) :
 
     newGame = gameOfLife.gameOfLife(gridSize = gridSize, maxIter = maxIter)
 
-    size = (newGame.gridSize[0]*(newGame.gridSize[1] + newGame.gridSize[0]//2), newGame.gridSize[1]*(newGame.gridSize[0] + newGame.gridSize[1]//2))
+    size = (newGame.gridSize[0]*(newGame.gridSize[0] + 4), newGame.gridSize[1]*(newGame.gridSize[1] + 4))
     screen = pygame.display.set_mode(size)
 
     pygame.display.set_caption("Game of Life")
@@ -28,7 +28,7 @@ def createGame(gridSize, maxIter) :
 
     iterationsLeft = newGame.maxIter 
 
-    while not done and (iterationsLeft != 0 or (newGame.grid == np.zeros(tuple(newGame.gridSize))).all()) :
+    while not done and (iterationsLeft != 0 or (newGame.grid != np.zeros(tuple(newGame.gridSize))).all()) :
 
         for event in pygame.event.get(): 
 
