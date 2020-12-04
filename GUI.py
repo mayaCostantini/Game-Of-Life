@@ -4,10 +4,10 @@ import numpy as np
 
 def createGame(gridSize, maxIter) : 
 
-    BLACK    = (   0,   0,   0)
-    WHITE    = ( 255, 255, 255)
-    GREEN    = (   0, 255,   0)
-    RED      = ( 255,   0,   0)
+    BLACK = (0, 0, 0)
+    WHITE = (255,255,255)
+    GREEN = (0, 255, 0)
+    RED = (255, 0, 0)
 
     pygame.init()
 
@@ -22,11 +22,9 @@ def createGame(gridSize, maxIter) :
 
     width = newGame.gridSize[0]
     height = newGame.gridSize[1]
-    margin = 5
+    margin = 4
 
     done = False
-
-    clock = pygame.time.Clock()
 
     iterationsLeft = newGame.maxIter 
 
@@ -37,19 +35,19 @@ def createGame(gridSize, maxIter) :
             if event.type == pygame.QUIT: 
                 done = True 
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                column = pos[0] // (width + margin)
-                row = pos[1] // (height + margin)
+                column = position[0] // (width + margin)
+                row = position[1] // (height + margin)
                 # Debug prints
-                print("Click ", pos, "Grid coordinates: ", row, column)
+                print("Click ", position, "Grid coordinates: ", row, column)
                 newGame.grid[row][column] = 1
                 newGame.firstIndividualsCoordinates.append([row, column])
             elif event.type == pygame.KEYDOWN : 
                 newGame.nextGeneration()
                 iterationsLeft -= 1 
 
-        pos = pygame.mouse.get_pos()
-        x = pos[0]
-        y = pos[1]
+        position = pygame.mouse.get_pos()
+        x = position[0]
+        y = position[1]
         
         screen.fill(BLACK)
 
@@ -62,8 +60,6 @@ def createGame(gridSize, maxIter) :
                 pygame.draw.rect(screen, color, [margin + (margin + width) * column, margin + (margin + height) * row, width, height])
                 
         pygame.display.flip()
-
-        clock.tick(60)
 
     pygame.quit()
 
