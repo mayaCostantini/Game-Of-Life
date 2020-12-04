@@ -3,7 +3,7 @@ import GUI
 import sys 
 
 
-def main() : 
+def printMenu() : 
 
     print("Hello, welcome to the game of life. Please choose an option : \n")
 
@@ -12,18 +12,33 @@ def main() :
     if userInput == "1" : 
 
         nbRows = input("Choose a number of rows for the grid : \n \n")
-        nbColumns = input("Choose a number of rows for the grid : \n \n")
+        nbColumns = input("Choose a number of columns for the grid : \n \n")
 
         nbMaxIter = input("Choose a maximal number of iterations : \n \n")
 
-        print("----------------- Creation of a new game ... --------------------")
+        print("------------------- Creation of a new game ... --------------------")
 
         GUI.createGame(gridSize=[int(nbRows), int(nbColumns)], maxIter=int(nbMaxIter))
 
+        sys.exit(0)
+
     if userInput == "2" : 
-        print("Goodbye, thank you for playing")
+
+        print("Goodbye, thank you for playing. ")
+        sys.exit(0)
+
+    else : 
+
+        print("Please enter a correct option. ")
+        printMenu()
     
-    sys.exit(0)
+    
+
+def main() : 
+
+    printMenu()
+
+    
 
 
 if __name__ == "__main__" : 

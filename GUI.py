@@ -15,7 +15,7 @@ def createGame(gridSize, maxIter) :
 
     newGame = gameOfLife.gameOfLife(gridSize = gridSize, maxIter = maxIter)
 
-    size = (500, 500)
+    size = (newGame.gridSize[0]*(newGame.gridSize[1] + newGame.gridSize[0]//2), newGame.gridSize[1]*(newGame.gridSize[0] + newGame.gridSize[1]//2))
     screen = pygame.display.set_mode(size)
 
     pygame.display.set_caption("Game of Life")
@@ -37,8 +37,6 @@ def createGame(gridSize, maxIter) :
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 column = position[0] // (width + margin)
                 row = position[1] // (height + margin)
-                # Debug prints
-                print("Click ", position, "Grid coordinates: ", row, column)
                 newGame.grid[row][column] = 1
                 newGame.firstIndividualsCoordinates.append([row, column])
             elif event.type == pygame.KEYDOWN : 
