@@ -36,13 +36,11 @@ Execute the following command to begin a new game :
 `python3 playGame.py`
 
 
-
-
-
-
 ![](4p18ag.gif)
 
 
 
+## Improvements to come 
 
+Automatic version 
 
