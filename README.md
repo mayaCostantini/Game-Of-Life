@@ -21,7 +21,7 @@ If not already done :
 
 Follow this guide to download the latest version of Python3 : https://realpython.com/installing-python/
 
-Install the `numpy` library with `pip` : 
+Install the `numpy` and `pygame` libraries (as in the example below with `pip`) : 
 
 `pip install numpy` 
 
