@@ -12,20 +12,25 @@ def printMenu() :
     if userInput == "1" : 
 
         def chooseRows() : 
-            nbRows = input("Choose a number of rows between 10 and 100 for the grid : \n \n")
+            nbRows = int(input("Choose a number of rows between 10 and 100 for the grid : \n \n"))
             if nbRows > 100 or nbRows < 10 or not isinstance(nbRows, int): 
                 print("Please enter a valid value for the number of rows. \n")
                 chooseRows()
+            return nbRows
     
         def chooseColumns() : 
-            nbColumns = input("Choose a number of columns between 10 and 100 for the grid : \n \n")
+            nbColumns = int(input("Choose a number of columns between 10 and 100 for the grid : \n \n"))
             if nbColumns > 100 or nbColumns < 10 or not isinstance(nbColumns, int): 
                 print("Please enter a valid value for the number of columns. \n")
                 chooseColumns()
+            return nbColumns
+
+        print("------------------- Creation of a new game ... --------------------")
 
         nbMaxIter = input("Choose a maximal number of iterations : \n \n")
 
-        print("------------------- Creation of a new game ... --------------------")
+        nbRows = chooseColumns()
+        nbColumns = chooseRows()
 
         GUI.createGame(gridSize=[int(nbRows), int(nbColumns)], maxIter=int(nbMaxIter))
 
